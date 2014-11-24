@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mobile.tvpocket.MainActivity" >
+
+    <item
+        android:id="@+id/home_channel_catalog"
+        android:icon="@drawable/ic_channel_catalog_light"
+        android:showAsAction="always"
+        android:title="@string/tv_explorer"/>
+    <item
+        android:id="@+id/home_my_favourite"
+        android:icon="@drawable/ic_my_favourite_light"
+        android:showAsAction="always"
+        android:title="@string/tv_explorer"/>
+    <item
+        android:id="@+id/home_my_reminder"
+        android:icon="@drawable/ic_myreminder_light"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/my_reminder"/>
+
+</menu>

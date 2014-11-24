@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mobile.tvpocket.ProgramsActivity" >
+
+    <item
+        android:id="@+id/watch_online"
+        android:icon="@drawable/ic_television_light"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/calendar"/>
+    <item
+        android:id="@+id/add_favourite"
+        android:icon="@drawable/ic_my_favourite_light"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/calendar"/>
+    <item
+        android:id="@+id/program_calendar"
+        android:icon="@drawable/ic_calendar_light"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/calendar"/>
+
+</menu>

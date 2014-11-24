@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- MESSAGES -->
+    <string name="msg_no_programs">Kênh này hiện chưa có lịch truyền hình</string>
+    <string name="msg_loading">Loading ...</string>
+    <string name="app_name">TV Pocket</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_description">content_description</string>
+    <string name="on_processing">Đang xử lý dữ liệu</string>
+    <string name="please_add_favourite">Không có kênh yêu thích nào</string>
+    <string name="lost_connection">Thiết bị hiện đang không kết nối internet. Vui lòng kiểm tra lại.</string>
+    <!-- =========================================== -->
+
+
+    <!-- HOME FRAGMENT -->
+    <string name="tv_explorer">TV Explorer</string>
+    <string name="my_reminder">My Reminder</string>
+    <string name="my_favourite">My Favourite</string>
+    <string name="on_air">Đang chiếu</string>
+    <string name="on_next">Sắp chiếu</string>
+    <!-- =========================================== -->
+
+
+    <!-- CHANNEL FRAGMENT -->
+    <string name="channel_title">Danh sách kênh</string>
+    <!-- =========================================== -->
+
+
+    <!-- PROGRAMS FRAGMENT -->
+    <string name="calendar">Lịch phát sóng</string>
+    <string name="program_title">Lịch phát sóng</string>
+    <string name="no_program">Kênh này chưa cập nhật lịch phát sóng</string>
+    <!-- =========================================== -->
+
+
+    <!-- SEARCH ACTIVITY -->
+    <string name="search_title">Tìm kiếm</string>
+    <string name="search_channel">Tìm kênh</string>
+    <string name="search_program">Tìm chương trình</string>
+    <!-- =========================================== -->
+
+
+    <!-- PROGRAM ACTIONS FRAGMENT -->
+    <string name="program_action_title">Chương trình</string>
+    <string name="watch_online">Xem trực tuyến</string>
+    <string name="add_favourite">Kênh yêu thích</string>
+    <string name="add_reminder">Thêm nhắc nhở</string>
+    <string name="icon_channel">Logo kênh</string>
+    <string name="url_invalid">Kênh này hiện chưa hỗ trợ xem trực tuyến</string>
+    <string name="added_favourite">Kênh này đã được thêm vào danh sách yêu thích.</string>
+    <string name="exist_favourite">Đã thêm kênh %s vào danh sách yêu thích.</string>
+
+    <!-- =========================================== -->
+
+
+    <!-- CONTEXT MENU -->
+    <string-array name="program_context_menus">
+        <item>Xem trực tuyến</item>
+        <item>Kênh yêu thích</item>
+        <item>Thêm nhắc nhở</item>
+    </string-array>
+    <string-array name="remind_option_items">
+        <item>Khi bắt đầu chương trình</item>
+        <item>Trước 5 phút</item>
+        <item>Trước 15 phút</item>
+        <item>Trước 30 phút</item>
+        <item>Trước 1 giờ</item>
+        <item>Trước 2 giờ</item>
+        <item>Trước 24 giờ</item>
+    </string-array>
+
+    <string name="remove">Xóa</string>
+    <string name="header_option">Lựa chọn</string>
+    <!-- =========================================== -->
+
+
+    <!-- APPLICATION MENU -->
+    <string-array name="application_menu">
+        <item>Danh sách kênh</item>
+        <item>TV Explorer</item>
+        <item>Nhắc nhở</item>
+        <item>Yêu thích</item>
+        <item>Cấu hình</item>
+        <item>Giúp đỡ</item>
+        <item>Giới thiệu</item>
+    </string-array>
+    <!-- =========================================== -->
+
+
+    <!-- FAVOURITE ACTIVITY -->
+    <string name="remove_fav_channel">Đã bỏ kênh yêu thích</string>
+    <string name="favourite_title">Kênh yêu thích</string>
+    <!-- =========================================== -->
+
+
+    <!-- REMINDER ACTIVITY -->
+    <string name="remove_reminder">Bỏ nhắc giờ chương trình.</string>
+    <string name="reminder_title">Nhắc nhở</string>
+    <!-- =========================================== -->
+
+
+    <!-- INTRODUCTION ACTIVITY -->
+    <string name="product_name">TV Pocket 1.1</string>
+    <string name="copyright">Developed by HuyQTA - 2014</string>
+    <string name="intro_title">Giới thiệu</string>
+    <!-- =========================================== -->
+
+</resources>

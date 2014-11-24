@@ -23,12 +23,14 @@ import com.mobile.tvpocket.activities.ReminderActivity;
 import com.mobile.tvpocket.adapter.HomePagerAdapter;
 import com.mobile.tvpocket.utils.GlobalConstants;
 
+
 public class HomeFragment extends Fragment {
 
 	View rootView;
 	HomePagerAdapter mHomePagerAdapter;
 	ViewPager mViewPager;
 	ArrayList<HomePagerAdapter.HomeDetailFragment> listHDF;
+	
 
 	public HomeFragment() {
 	}
@@ -45,15 +47,17 @@ public class HomeFragment extends Fragment {
 		fragm = new HomePagerAdapter.HomeDetailFragment(getResources().getString(R.string.on_next));
 		listHDF.add(fragm);
 
-//		if (savedInstanceState != null) {
-//			listHDF = savedInstanceState.getParcelableArrayList("tabdata");
-//		}
+		// if (savedInstanceState != null) {
+		// listHDF = savedInstanceState.getParcelableArrayList("tabdata");
+		// }
 		setupTabs(listHDF);
 		// Setup option menus
 		this.setHasOptionsMenu(true);
 
 		this.getActivity().getActionBar()
 				.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+		
+		
 
 		return rootView;
 	}
@@ -109,18 +113,18 @@ public class HomeFragment extends Fragment {
 		}
 	}
 
-//	public void onSaveInstanceState(Bundle extra) {
-//		extra.putParcelableArrayList("tabdata", listHDF);
-//		super.onSaveInstanceState(extra);
-//	}
-	
-//	@Override
-//	public void onSaveInstanceState(Bundle outState) {
-//	   super.onSaveInstanceState(outState);
-//	}
-//
-//	@Override
-//	public void onRestoreInstanceState(Bundle savedState) {
-//	   super.onRestoreInstanceState(savedState);
-//	}
+	// public void onSaveInstanceState(Bundle extra) {
+	// extra.putParcelableArrayList("tabdata", listHDF);
+	// super.onSaveInstanceState(extra);
+	// }
+
+	// @Override
+	// public void onSaveInstanceState(Bundle outState) {
+	// super.onSaveInstanceState(outState);
+	// }
+	//
+	// @Override
+	// public void onRestoreInstanceState(Bundle savedState) {
+	// super.onRestoreInstanceState(savedState);
+	// }
 }

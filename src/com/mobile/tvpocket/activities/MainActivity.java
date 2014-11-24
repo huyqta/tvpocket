@@ -3,16 +3,27 @@ package com.mobile.tvpocket.activities;
 import android.app.ActionBar;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.mobile.tvpocket.R;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.fragments.HomeFragment;
 import com.mobile.tvpocket.fragments.NavigationDrawerFragment;
 import com.mobile.tvpocket.utils.GlobalConstants;
 import com.splunk.mint.Mint;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends FragmentActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -47,8 +58,9 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		HomeFragment homefragment = new HomeFragment();
 		fragmentTransaction.add(R.id.fragment_container, homefragment, "HomeFragment");
+		AdFragment adfragment = new AdFragment();
+		fragmentTransaction.add(R.id.adFragment, adfragment, "AdFragment");
 		fragmentTransaction.commit();
-
 	}
 
 	@Override
@@ -81,4 +93,65 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 		actionBar.setTitle(mTitle);
 		actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
 	}
+
+	/**
+	 * This class makes the ad request and loads the ad.
+	 */
+	// public static class AdFragment extends Fragment {
+	//
+	// private AdView mAdView;
+	//
+	// public AdFragment() {
+	// }
+	//
+	// @Override
+	// public void onActivityCreated(Bundle bundle) {
+	// super.onActivityCreated(bundle);
+	//
+	// // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+	// // values/strings.xml.
+	// mAdView = (AdView) getView().findViewById(R.id.adView);
+	//
+	// // Create an ad request. Check logcat output for the hashed device ID to
+	// // get test ads on a physical device. e.g.
+	// // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
+	// AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+	//
+	// // Start loading the ad in the background.
+	// mAdView.loadAd(adRequest);
+	// }
+	//
+	// @Override
+	// public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	// return inflater.inflate(R.layout.fragment_ad, container, false);
+	// }
+	//
+	// /** Called when leaving the activity */
+	// @Override
+	// public void onPause() {
+	// if (mAdView != null) {
+	// mAdView.pause();
+	// }
+	// super.onPause();
+	// }
+	//
+	// /** Called when returning to the activity */
+	// @Override
+	// public void onResume() {
+	// super.onResume();
+	// if (mAdView != null) {
+	// mAdView.resume();
+	// }
+	// }
+	//
+	// /** Called before the activity is destroyed */
+	// @Override
+	// public void onDestroy() {
+	// if (mAdView != null) {
+	// mAdView.destroy();
+	// }
+	// super.onDestroy();
+	// }
+	//
+	// }
 }

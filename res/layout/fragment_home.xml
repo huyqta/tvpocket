@@ -13,4 +13,6 @@
         android:paddingTop="4dp"
         android:textColor="@color/Black" />
 
+    
+
 </android.support.v4.view.ViewPager>

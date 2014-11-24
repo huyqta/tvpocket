@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    
     <!-- MESSAGES -->
     <string name="msg_no_programs">Kênh này hiện chưa có lịch truyền hình</string>
     <string name="msg_loading">Loading ...</string>

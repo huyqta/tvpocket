@@ -67,7 +67,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
 	// //////////////////////////////////////
 	// ----- ChannelCatalogFragment ------//
 	// //////////////////////////////////////
-	public static class HomeDetailFragment extends Fragment implements Parcelable {
+	public static class HomeDetailFragment extends Fragment {
 
 		// String[] listTabs = { "Đang chiếu", "Sắp chiếu" };
 		public String Tabname;
@@ -209,18 +209,6 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
 
 		public static List<Program> GetFromServices(List<Program> listPrograms) {
 			return listPrograms;
-		}
-
-		@Override
-		public int describeContents() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public void writeToParcel(Parcel dest, int flags) {
-			// TODO Auto-generated method stub
-			// out.writeInt(mData);
 		}
 	}
 }

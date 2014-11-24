@@ -14,7 +14,7 @@ public class ChannelCatalogActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(ChannelCatalogActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(ChannelCatalogActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_channel_catalog);
 
 		// Goi fragment channel catalog

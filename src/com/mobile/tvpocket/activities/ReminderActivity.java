@@ -31,7 +31,7 @@ public class ReminderActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(ReminderActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(ReminderActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_reminder);
 		loadAllReminders();
 		registerForContextMenu(findViewById(R.id.listview_reminds));

@@ -15,7 +15,7 @@ public class ProgramsActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(ProgramsActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(ProgramsActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_channel_catalog);
 
 		// Nhan channel tu activity program

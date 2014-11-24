@@ -10,11 +10,12 @@ import org.joda.time.format.DateTimeFormatter;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
 	// //////////////////////////////////////
 	// ----- ChannelCatalogFragment ------//
 	// //////////////////////////////////////
-	public static class HomeDetailFragment extends Fragment {
+	public static class HomeDetailFragment extends Fragment implements Parcelable {
 
 		// String[] listTabs = { "Đang chiếu", "Sắp chiếu" };
 		public String Tabname;
@@ -208,6 +209,18 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
 
 		public static List<Program> GetFromServices(List<Program> listPrograms) {
 			return listPrograms;
+		}
+
+		@Override
+		public int describeContents() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public void writeToParcel(Parcel dest, int flags) {
+			// TODO Auto-generated method stub
+			// out.writeInt(mData);
 		}
 	}
 }

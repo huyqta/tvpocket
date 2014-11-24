@@ -1,9 +1,9 @@
 package com.mobile.tvpocket.activities;
 
-import com.mobile.tvpocket.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.mobile.tvpocket.R;
 
 public class HelpActivity extends Activity {
 

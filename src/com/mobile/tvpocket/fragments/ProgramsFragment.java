@@ -8,7 +8,6 @@ import org.joda.time.DateTime;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,11 +24,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.mobile.tvpocket.R;
-import com.mobile.tvpocket.activities.ProgramActionsActivity;
 import com.mobile.tvpocket.activities.StreamAudioActivity;
 import com.mobile.tvpocket.activities.VideoViewActivity;
 import com.mobile.tvpocket.adapter.CustomListviewImage2TextAdapter;
-import com.mobile.tvpocket.models.MyChannel;
 import com.mobile.tvpocket.models.MyFavourite;
 import com.mobile.tvpocket.models.Program;
 import com.mobile.tvpocket.services.ChannelService;
@@ -85,7 +82,7 @@ public class ProgramsFragment extends Fragment {
 		// this.getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 		// Setup option menus
 		this.setHasOptionsMenu(true);
-
+		this.getActivity().getActionBar().setTitle(this.channel);
 		this.getActivity().getActionBar().setHomeButtonEnabled(true);
 		this.getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActivity().getActionBar()
@@ -110,6 +107,7 @@ public class ProgramsFragment extends Fragment {
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		menu.clear();
 		// TODO Auto-generated method stub
 		inflater.inflate(R.menu.program, menu);
 	}
@@ -135,7 +133,8 @@ public class ProgramsFragment extends Fragment {
 				Intent intent = new Intent(this.getActivity(), StreamAudioActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				Bundle args = new Bundle();
-				args.putString("URLTV", this.urltv);				
+				args.putString("URLTV", this.urltv);
+				args.putString("CHANNEL", this.channel);
 				intent.putExtra("BUNDLE", args);
 				startActivity(intent);
 
@@ -144,7 +143,7 @@ public class ProgramsFragment extends Fragment {
 				Intent intent = new Intent(this.getActivity(), VideoViewActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				Bundle args = new Bundle();
-				args.putString("URLTV", this.urltv);				
+				args.putString("URLTV", this.urltv);
 				intent.putExtra("BUNDLE", args);
 				startActivity(intent);
 			}

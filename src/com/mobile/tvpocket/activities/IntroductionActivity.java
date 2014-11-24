@@ -1,8 +1,5 @@
 package com.mobile.tvpocket.activities;
 
-import com.mobile.tvpocket.R;
-import com.splunk.mint.Mint;
-
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -10,13 +7,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.mobile.tvpocket.R;
+import com.splunk.mint.Mint;
+
 public class IntroductionActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(IntroductionActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(IntroductionActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_introduction);
 
 		Typeface fontRobotoBlack = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");

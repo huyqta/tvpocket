@@ -1,0 +1,11 @@
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/text1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip"
+        android:paddingLeft="5dip"
+        android:layout_gravity="right"
+        android:background="@color/Combo77GreenUnderline"
+        android:gravity="left"
+        android:textColor="@color/White" />

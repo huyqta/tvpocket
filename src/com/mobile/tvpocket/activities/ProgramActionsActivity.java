@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.ContextMenu;
@@ -50,7 +49,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(ProgramActionsActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(ProgramActionsActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_program_actions);
 		Intent intent = getIntent();
 
@@ -122,7 +121,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 				GlobalConstants.HomeDetailFragment.checkCurrentProgramNext(true);
 			}
 		});
-
+		this.getActionBar().setTitle(this.sChannel);
 		this.getActionBar().setHomeButtonEnabled(true);
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
@@ -136,8 +135,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 		args.putString("URLTV", sUrlWatchOnline);
 		if (ChannelService.GetChannelsById(iChannelid).getRefgroup() == 999) {
 			args.putBoolean("ISAUDIO", true);
-		}
-		else{
+		} else {
 			args.putBoolean("ISAUDIO", false);
 		}
 		intent.putExtra("BUNDLE", args);

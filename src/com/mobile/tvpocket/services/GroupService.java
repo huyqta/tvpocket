@@ -14,7 +14,7 @@ import com.mobile.tvpocket.utils.RestUtil;
 
 public class GroupService {
 	public static void GetAllGroupsFromWS() {
-		String ret = RestUtil.get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLmqdK5_Qu7DJvgYDsj7kUZFgTsZR6RU4M&key=AIzaSyAB9wHpEzkADaHGUhLzr90kC8Rt6OrvsPs");
+		String ret = RestUtil.get("http://huyqta.esy.es/index.php/api/groups/GetAllGroups/format/json");
 		Gson gson = new Gson();
 		Type collectionType = new TypeToken<Collection<MyGroup>>() {
 		}.getType();

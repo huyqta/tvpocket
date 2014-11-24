@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,7 +21,6 @@ import com.mobile.tvpocket.activities.ChannelCatalogActivity;
 import com.mobile.tvpocket.activities.FavouriteActivity;
 import com.mobile.tvpocket.activities.ReminderActivity;
 import com.mobile.tvpocket.adapter.HomePagerAdapter;
-import com.mobile.tvpocket.adapter.HomePagerAdapter.HomeDetailFragment;
 import com.mobile.tvpocket.utils.GlobalConstants;
 
 public class HomeFragment extends Fragment {
@@ -30,6 +28,7 @@ public class HomeFragment extends Fragment {
 	View rootView;
 	HomePagerAdapter mHomePagerAdapter;
 	ViewPager mViewPager;
+	ArrayList<HomePagerAdapter.HomeDetailFragment> listHDF;
 
 	public HomeFragment() {
 	}
@@ -39,8 +38,17 @@ public class HomeFragment extends Fragment {
 
 		rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-		setupTabs();
+		listHDF = new ArrayList<HomePagerAdapter.HomeDetailFragment>();
+		HomePagerAdapter.HomeDetailFragment fragm;
+		fragm = new HomePagerAdapter.HomeDetailFragment(getResources().getString(R.string.on_air));
+		listHDF.add(fragm);
+		fragm = new HomePagerAdapter.HomeDetailFragment(getResources().getString(R.string.on_next));
+		listHDF.add(fragm);
 
+//		if (savedInstanceState != null) {
+//			listHDF = savedInstanceState.getParcelableArrayList("tabdata");
+//		}
+		setupTabs(listHDF);
 		// Setup option menus
 		this.setHasOptionsMenu(true);
 
@@ -50,14 +58,9 @@ public class HomeFragment extends Fragment {
 		return rootView;
 	}
 
-	private void setupTabs() {
+	private void setupTabs(List<HomePagerAdapter.HomeDetailFragment> listHDF) {
 		try {
-			List<HomePagerAdapter.HomeDetailFragment> listHDF = new ArrayList<HomePagerAdapter.HomeDetailFragment>();
-			HomePagerAdapter.HomeDetailFragment fragm;
-			fragm = new HomePagerAdapter.HomeDetailFragment(getResources().getString(R.string.on_air));
-			listHDF.add(fragm);
-			fragm = new HomePagerAdapter.HomeDetailFragment(getResources().getString(R.string.on_next));
-			listHDF.add(fragm);
+
 			mHomePagerAdapter = new HomePagerAdapter(getFragmentManager(), listHDF);
 			mViewPager = (ViewPager) rootView.findViewById(R.id.home_pager);
 			PagerTabStrip pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_title_strip);
@@ -71,6 +74,7 @@ public class HomeFragment extends Fragment {
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		menu.clear();
 		inflater.inflate(R.menu.home, menu);
 	}
 
@@ -103,6 +107,20 @@ public class HomeFragment extends Fragment {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-
 	}
+
+//	public void onSaveInstanceState(Bundle extra) {
+//		extra.putParcelableArrayList("tabdata", listHDF);
+//		super.onSaveInstanceState(extra);
+//	}
+	
+//	@Override
+//	public void onSaveInstanceState(Bundle outState) {
+//	   super.onSaveInstanceState(outState);
+//	}
+//
+//	@Override
+//	public void onRestoreInstanceState(Bundle savedState) {
+//	   super.onRestoreInstanceState(savedState);
+//	}
 }

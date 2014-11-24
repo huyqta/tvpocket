@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/com/mobile/tvpocket/activities/ProgramActionsActivity.java=UTF-8
 encoding//src/com/mobile/tvpocket/activities/ReminderActivity.java=UTF-8
+encoding//src/com/mobile/tvpocket/activities/StreamAudioActivity.java=UTF-8
 encoding//src/com/mobile/tvpocket/activities/VideoViewActivity.java=UTF-8
 encoding//src/com/mobile/tvpocket/adapter/HomePagerAdapter.java=UTF-8
 encoding//src/com/mobile/tvpocket/services/ProgramService.java=UTF-8

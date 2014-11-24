@@ -21,7 +21,7 @@ public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(SplashActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(SplashActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_splash);
 
 		textview = (TextView) findViewById(R.id.loading);

@@ -12,6 +12,7 @@ import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.fragments.HomeFragment;
 import com.mobile.tvpocket.fragments.NavigationDrawerFragment;
 import com.mobile.tvpocket.utils.GlobalConstants;
+import com.splunk.mint.Mint;
 
 public class MainActivity extends FragmentActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -30,7 +31,7 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
-
+		Mint.initAndStartSession(MainActivity.this, "46a7ecb3");
 		GlobalConstants.MainContext = this;
 
 		// Them navigation sliding menu

@@ -34,11 +34,11 @@ public class GlobalConstants {
 	public static int RangeNextPrograms = 3;
 
 	public static List<String> ApplicationMenus = Arrays.asList("Danh sách kênh", "Nhắc nhở", "Yêu thích",
-			"Giới thiệu", "Tìm kiếm", "Hướng dẫn");
+			"Giới thiệu", "Tìm kiếm");
 
 	public static List<Integer> ApplicationMenuIcons = Arrays.asList(R.drawable.ic_channel_catalog_blue,
 			R.drawable.ic_reminder_blue, R.drawable.ic_favourite_blue, R.drawable.ic_introduction_blue,
-			R.drawable.ic_search_blue, R.drawable.ic_help);
+			R.drawable.ic_search_blue);
 
 	// public static List<String> ChannelGroups = Arrays.asList("Sports",
 	// "Movies", "Kids", "News", "Adults", "Styles");

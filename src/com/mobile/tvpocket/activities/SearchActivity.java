@@ -31,7 +31,7 @@ public class SearchActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(SearchActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(SearchActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_search);
 
 		final ListView list_result = (ListView) findViewById(R.id.listview_fragment_search);

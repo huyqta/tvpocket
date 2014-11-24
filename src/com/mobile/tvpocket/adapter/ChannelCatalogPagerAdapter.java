@@ -16,7 +16,6 @@ import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.models.MyChannel;
 import com.mobile.tvpocket.models.MyGroup;
 import com.mobile.tvpocket.services.ChannelService;
-import com.mobile.tvpocket.utils.GlobalConstants;
 import com.mobile.tvpocket.utils.GlobalConstants.CustomLayout;
 
 public class ChannelCatalogPagerAdapter extends FragmentPagerAdapter {

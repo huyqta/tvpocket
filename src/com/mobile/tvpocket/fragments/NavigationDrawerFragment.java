@@ -16,10 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.adapter.CustomListviewImageTextAdapter;

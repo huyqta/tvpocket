@@ -15,14 +15,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mobile.tvpocket.R;
-import com.mobile.tvpocket.activities.OutPut;
 import com.mobile.tvpocket.activities.ProgramActionsActivity;
 import com.mobile.tvpocket.models.MyReminder;
 import com.mobile.tvpocket.utils.GlobalConstants;

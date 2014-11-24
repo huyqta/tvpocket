@@ -32,7 +32,7 @@ public class FavouriteActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//Mint.initAndStartSession(FavouriteActivity.this, "46a7ecb3");
+		Mint.initAndStartSession(FavouriteActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_favourite);
 		loadAllFavourites();
 		registerForContextMenu(findViewById(R.id.listview_reminds));

@@ -58,8 +58,8 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		HomeFragment homefragment = new HomeFragment();
 		fragmentTransaction.add(R.id.fragment_container, homefragment, "HomeFragment");
-		AdFragment adfragment = new AdFragment();
-		fragmentTransaction.add(R.id.adFragment, adfragment, "AdFragment");
+		AdFragment adfragmentMain = new AdFragment();
+		fragmentTransaction.add(R.id.adFragment, adfragmentMain, "AdFragment");
 		fragmentTransaction.commit();
 	}
 

@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.mobile.tvpocket.R;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.fragments.ChannelCatalogFragment;
+import com.mobile.tvpocket.utils.GlobalConstants;
 import com.splunk.mint.Mint;
 
 public class ChannelCatalogActivity extends FragmentActivity {
@@ -19,10 +21,11 @@ public class ChannelCatalogActivity extends FragmentActivity {
 
 		// Goi fragment channel catalog
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager
-				.beginTransaction();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		ChannelCatalogFragment fragment = new ChannelCatalogFragment();
-		fragmentTransaction.add(R.id.fragment_container, fragment);
+		fragmentTransaction.add(R.id.fragment_container_channel, fragment);
+		AdFragment adfragmentChannel = new AdFragment();
+		fragmentTransaction.add(R.id.adFragmentChannelCatalog, adfragmentChannel, "AdFragment");
 		fragmentTransaction.commit();
 	}
 }

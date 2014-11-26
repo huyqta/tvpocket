@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.mobile.tvpocket.R;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.services.ChannelService;
 import com.mobile.tvpocket.services.GroupService;
 import com.mobile.tvpocket.services.ReminderService;
@@ -27,6 +28,7 @@ public class SplashActivity extends Activity {
 		textview = (TextView) findViewById(R.id.loading);
 
 		GlobalConstants.ApplicationContext = getApplicationContext();
+		GlobalConstants.adfragment = new AdFragment();
 		/**
 		 * Showing splashscreen while making network calls to download necessary data before launching the app Will use
 		 * AsyncTask to make http call

@@ -17,6 +17,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -30,6 +32,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.mobile.tvpocket.R;
+import com.mobile.tvpocket.fragments.AdFragment;
+import com.mobile.tvpocket.fragments.HomeFragment;
+import com.mobile.tvpocket.fragments.ProgramsFragment;
 import com.mobile.tvpocket.models.MyFavourite;
 import com.mobile.tvpocket.models.MyReminder;
 import com.mobile.tvpocket.services.ChannelService;
@@ -126,6 +131,13 @@ public class ProgramActionsActivity extends FragmentActivity {
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+
+		// Goi fragment Home
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		AdFragment adfragmentProgramAction = new AdFragment();
+		fragmentTransaction.add(R.id.adFragmentProgramAction, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.commit();
 	}
 
 	public void startPlay(View view) {

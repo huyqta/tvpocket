@@ -28,7 +28,7 @@ public class ProgramsActivity extends FragmentActivity {
 		ProgramsFragment fragment = new ProgramsFragment();
 
 		fragment.setArguments(bundle);
-		fragmentTransaction.add(R.id.fragment_container, fragment);
+		fragmentTransaction.add(R.id.fragment_container_channel, fragment);
 		fragmentTransaction.commit();
 	}
 }

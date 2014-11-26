@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 
 import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.adapter.HomePagerAdapter;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.models.MyChannel;
 import com.mobile.tvpocket.models.MyFavourite;
 import com.mobile.tvpocket.models.MyGroup;
@@ -18,6 +19,8 @@ import com.mobile.tvpocket.models.MyReminder;
 import com.mobile.tvpocket.models.Program;
 
 public class GlobalConstants {
+	
+	public static AdFragment adfragment;
 
 	public static DrawerLayout HomeActivityDrawerLayout;
 	

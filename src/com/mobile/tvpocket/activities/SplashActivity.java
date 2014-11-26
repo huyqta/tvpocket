@@ -25,7 +25,7 @@ public class SplashActivity extends Activity {
 		Mint.initAndStartSession(SplashActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_splash);
 
-		textview = (TextView) findViewById(R.id.loading);
+		textview = (TextView) findViewById(R.id.splash_loading);
 
 		GlobalConstants.ApplicationContext = getApplicationContext();
 		GlobalConstants.adfragment = new AdFragment();

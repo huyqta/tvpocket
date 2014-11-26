@@ -34,9 +34,9 @@ public class SearchActivity extends FragmentActivity {
 		Mint.initAndStartSession(SearchActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_search);
 
-		final ListView list_result = (ListView) findViewById(R.id.listview_fragment_search);
-		final RadioButton rdChannel = (RadioButton) findViewById(R.id.radioChannel);
-		final RadioButton rdProgram = (RadioButton) findViewById(R.id.radioProgram);
+		final ListView list_result = (ListView) findViewById(R.id.search_listview_fragment);
+		final RadioButton rdChannel = (RadioButton) findViewById(R.id.search_radioChannel);
+		final RadioButton rdProgram = (RadioButton) findViewById(R.id.search_radioProgram);
 		final EditText search_input = (EditText) findViewById(R.id.search_input);
 
 		search_input.addTextChangedListener(new TextWatcher() {
@@ -94,7 +94,7 @@ public class SearchActivity extends FragmentActivity {
 	}
 
 	public void loadChannels(List<MyChannel> listChannels) {
-		ListView listview_detail = (ListView) this.findViewById(R.id.listview_fragment_search);
+		ListView listview_detail = (ListView) this.findViewById(R.id.search_listview_fragment);
 		TextView textview_message = (TextView) this.findViewById(R.id.textview_message);
 
 		if (listChannels == null) {
@@ -108,7 +108,7 @@ public class SearchActivity extends FragmentActivity {
 	}
 
 	public void loadPrograms(List<Program> listPrograms) {
-		ListView listview_detail = (ListView) this.findViewById(R.id.listview_fragment_search);
+		ListView listview_detail = (ListView) this.findViewById(R.id.search_listview_fragment);
 		TextView textview_message = (TextView) this.findViewById(R.id.textview_message);
 
 		if (listPrograms == null) {

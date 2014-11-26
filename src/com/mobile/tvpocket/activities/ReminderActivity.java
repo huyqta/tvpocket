@@ -34,7 +34,7 @@ public class ReminderActivity extends Activity {
 		Mint.initAndStartSession(ReminderActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_reminder);
 		loadAllReminders();
-		registerForContextMenu(findViewById(R.id.listview_reminds));
+		registerForContextMenu(findViewById(R.id.reminder_listview_reminds));
 
 		this.getActionBar().setHomeButtonEnabled(true);
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -44,7 +44,7 @@ public class ReminderActivity extends Activity {
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		if (v.getId() == R.id.listview_reminds) {
+		if (v.getId() == R.id.reminder_listview_reminds) {
 			menu.setHeaderTitle(getResources().getString(R.string.header_option));
 			menu.add(getResources().getString(R.string.remove));
 		}
@@ -77,7 +77,7 @@ public class ReminderActivity extends Activity {
 
 		CustomListviewImage2TextAdapter mCustomListviewImage2TextAdapter = new CustomListviewImage2TextAdapter(this,
 				_list_text, _list_image_id, "", CustomLayout.REMINDERS);
-		ListView listviewReminds = (ListView) findViewById(R.id.listview_reminds);
+		ListView listviewReminds = (ListView) findViewById(R.id.reminder_listview_reminds);
 		listviewReminds.setAdapter(mCustomListviewImage2TextAdapter);
 	}
 

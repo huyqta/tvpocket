@@ -73,19 +73,19 @@ public class ProgramActionsActivity extends FragmentActivity {
 		else
 			imvChannel.setImageResource(R.drawable.ic_channel_catalog_blue);
 
-		TextView txtChannel = (TextView) findViewById(R.id.txtChannel);
+		TextView txtChannel = (TextView) findViewById(R.id.program_action_txtChannel);
 		txtChannel.setTypeface(font);
 		txtChannel.setText(sChannel);
 
-		TextView txtProgramTime = (TextView) findViewById(R.id.txtProgramTime);
+		TextView txtProgramTime = (TextView) findViewById(R.id.program_action_txtProgramTime);
 		txtProgramTime.setTypeface(font);
 		txtProgramTime.setText(sProgramTime);
 
-		TextView txtProgramTitle = (TextView) findViewById(R.id.txtProgramTitle);
+		TextView txtProgramTitle = (TextView) findViewById(R.id.program_action_txtProgramTitle);
 		txtProgramTitle.setTypeface(font);
 		txtProgramTitle.setText(sProgramTitle);
 
-		ImageButton btnAddReminder = (ImageButton) findViewById(R.id.btnAddReminder);
+		ImageButton btnAddReminder = (ImageButton) findViewById(R.id.program_action_btnAddReminder);
 		registerForContextMenu(btnAddReminder);
 		btnAddReminder.setVisibility(View.INVISIBLE);
 
@@ -100,9 +100,9 @@ public class ProgramActionsActivity extends FragmentActivity {
 			}
 		}
 
-		ImageButton btnWatchOnline = (ImageButton) findViewById(R.id.btnWatchOnline);
+		ImageButton btnWatchOnline = (ImageButton) findViewById(R.id.program_action_btnWatchOnline);
 
-		ImageButton btnAddFavourite = (ImageButton) findViewById(R.id.btnAddFavourite);
+		ImageButton btnAddFavourite = (ImageButton) findViewById(R.id.program_action_btnAddFavourite);
 		btnAddFavourite.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -136,7 +136,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		AdFragment adfragmentProgramAction = new AdFragment();
-		fragmentTransaction.add(R.id.adFragmentProgramAction, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.add(R.id.program_action_adFragment, adfragmentProgramAction, "AdFragment");
 		fragmentTransaction.commit();
 	}
 
@@ -168,7 +168,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		if (v.getId() == R.id.btnAddReminder) {
+		if (v.getId() == R.id.program_action_btnAddReminder) {
 			menu.setHeaderTitle("Options");
 			String[] menuRemindItems = getResources().getStringArray(R.array.remind_option_items);
 			for (int i = 0; i < menuRemindItems.length; i++) {

@@ -23,9 +23,9 @@ public class ChannelCatalogActivity extends FragmentActivity {
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		ChannelCatalogFragment fragment = new ChannelCatalogFragment();
-		fragmentTransaction.add(R.id.fragment_container_channel, fragment);
+		fragmentTransaction.add(R.id.channel_catalog_fragment_container, fragment);
 		AdFragment adfragmentChannel = new AdFragment();
-		fragmentTransaction.add(R.id.adFragmentChannelCatalog, adfragmentChannel, "AdFragment");
+		fragmentTransaction.add(R.id.channel_catalog_adFragment, adfragmentChannel, "AdFragment");
 		fragmentTransaction.commit();
 	}
 }

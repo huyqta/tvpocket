@@ -1,6 +1,7 @@
 package com.mobile.tvpocket.activities;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -47,19 +49,23 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 
 		// Them navigation sliding menu
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(
-				R.id.navigation_drawer);
+				R.id.main_navigation_drawer);
 		mTitle = getTitle();
 
 		// Set up the drawer.
-		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+		 mNavigationDrawerFragment.setUp(R.id.main_navigation_drawer, (DrawerLayout)findViewById(R.id.main_drawer_layout));
+		// LayoutInflater inflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		// RelativeLayout layoutRight = (RelativeLayout) inflate.inflate(R.layout.fragment_home_slidingmenu, null);
+		// mNavigationDrawerFragment.setUp(R.id.main_navigation_drawer,
+		// (DrawerLayout) layoutRight.findViewById(R.id.drawer_layout));
 
 		// Goi fragment Home
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		HomeFragment homefragment = new HomeFragment();
-		fragmentTransaction.add(R.id.fragment_container, homefragment, "HomeFragment");
+		fragmentTransaction.add(R.id.main_fragment_container, homefragment, "HomeFragment");
 		AdFragment adfragmentMain = new AdFragment();
-		fragmentTransaction.add(R.id.adFragment, adfragmentMain, "AdFragment");
+		fragmentTransaction.add(R.id.main_adFragment, adfragmentMain, "AdFragment");
 		fragmentTransaction.commit();
 	}
 

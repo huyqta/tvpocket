@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/status"
+        android:id="@+id/audio_stream_status"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/Combo77GreenUnderline"
         android:gravity="center_horizontal"
-        android:text="@string/msg_loading"
-        android:textAlignment="center"
+        android:text="@string/msg_loading"        
         android:textColor="@color/White"
         android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20px"
+        android:layout_below="@id/audio_stream_status"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <ImageButton
-            android:id="@+id/play"
+            android:id="@+id/audio_stream_play"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
@@ -32,7 +31,7 @@
             android:src="@drawable/ic_media_play" />
 
         <ImageButton
-            android:id="@+id/stop"
+            android:id="@+id/audio_stream_stop"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
@@ -41,4 +40,4 @@
             android:src="@drawable/ic_media_stop" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -35,7 +35,7 @@ public class FavouriteActivity extends Activity {
 		Mint.initAndStartSession(FavouriteActivity.this, "46a7ecb3");
 		setContentView(R.layout.activity_favourite);
 		loadAllFavourites();
-		registerForContextMenu(findViewById(R.id.listview_reminds));
+		registerForContextMenu(findViewById(R.id.favourite_listview_reminds));
 
 		this.getActionBar().setHomeButtonEnabled(true);
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -45,7 +45,7 @@ public class FavouriteActivity extends Activity {
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		if (v.getId() == R.id.listview_reminds) {
+		if (v.getId() == R.id.favourite_listview_reminds) {
 			// AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
 			menu.setHeaderTitle("Options");
 			menu.add(getResources().getString(R.string.remove));
@@ -79,7 +79,7 @@ public class FavouriteActivity extends Activity {
 
 		CustomListviewImage2TextAdapter mCustomListviewImage2TextAdapter = new CustomListviewImage2TextAdapter(this,
 				_list_text, _list_image_id, "", CustomLayout.FAVOURITES);
-		ListView listviewReminds = (ListView) findViewById(R.id.listview_reminds);
+		ListView listviewReminds = (ListView) findViewById(R.id.favourite_listview_reminds);
 		listviewReminds.setAdapter(mCustomListviewImage2TextAdapter);
 
 		

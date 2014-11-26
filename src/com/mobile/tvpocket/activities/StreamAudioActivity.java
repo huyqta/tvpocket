@@ -39,9 +39,9 @@ public class StreamAudioActivity extends Activity implements OnPreparedListener,
 		sUrlWatchOnline = intent.getBundleExtra("BUNDLE").getString("URLTV");
 		sChannel = intent.getBundleExtra("BUNDLE").getString("CHANNEL");
 
-		btPlay = (ImageButton) findViewById(R.id.play);
-		btStop = (ImageButton) findViewById(R.id.stop);
-		tvStatus = (TextView) findViewById(R.id.status);
+		btPlay = (ImageButton) findViewById(R.id.audio_stream_play);
+		btStop = (ImageButton) findViewById(R.id.audio_stream_stop);
+		tvStatus = (TextView) findViewById(R.id.audio_stream_status);
 		tvStatus.setText(sChannel);
 		tvStatus.setTypeface(font);
 

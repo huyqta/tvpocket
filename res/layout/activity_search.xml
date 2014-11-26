@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <RadioGroup
-        android:id="@+id/radioType"
+        android:id="@+id/search_radioType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -14,14 +14,14 @@
         android:orientation="horizontal" >
 
         <RadioButton
-            android:id="@+id/radioChannel"
+            android:id="@+id/search_radioChannel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/search_channel" />
 
         <RadioButton
-            android:id="@+id/radioProgram"
+            android:id="@+id/search_radioProgram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_program" />
@@ -55,14 +55,14 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/listview_fragment_search"
+        android:id="@+id/search_listview_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" >
     </ListView>
 
     <TextView
-        android:id="@+id/textview_message"
+        android:id="@+id/search_textview_message"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"

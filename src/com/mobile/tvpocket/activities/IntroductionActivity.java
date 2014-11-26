@@ -21,8 +21,8 @@ public class IntroductionActivity extends Activity {
 
 		Typeface fontRobotoBlack = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");
 
-		TextView product_name = (TextView) findViewById(R.id.product_name);
-		TextView copyright = (TextView) findViewById(R.id.copyright);
+		TextView product_name = (TextView) findViewById(R.id.introduction_product_name);
+		TextView copyright = (TextView) findViewById(R.id.introduction_copyright);
 
 		product_name.setTypeface(fontRobotoBlack);
 		copyright.setTypeface(fontRobotoBlack);

@@ -5,6 +5,8 @@ import java.util.List;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.adapter.CustomListviewImage2TextAdapter;
 import com.mobile.tvpocket.adapter.CustomListviewImageTextAdapter;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.models.MyChannel;
 import com.mobile.tvpocket.models.Program;
 import com.mobile.tvpocket.services.ChannelService;
@@ -91,6 +94,13 @@ public class SearchActivity extends FragmentActivity {
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+
+		// Goi fragment Home
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		AdFragment adfragmentProgramAction = new AdFragment();
+		fragmentTransaction.add(R.id.search_adFragment, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.commit();
 	}
 
 	public void loadChannels(List<MyChannel> listChannels) {

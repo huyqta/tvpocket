@@ -105,11 +105,18 @@
             android:text="@string/add_reminder" />
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/program_action_adFragment"
-        android:name="com.mobile.tvpocket.fragments.AdFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom" >
+
+        <fragment
+            android:id="@+id/program_action_adFragment"
+            android:name="com.mobile.tvpocket.fragments.AdFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 
 </LinearLayout>

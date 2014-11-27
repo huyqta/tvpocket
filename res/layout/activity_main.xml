@@ -7,11 +7,24 @@
     android:keepScreenOn="true"
     tools:context="com.mobile.tvpocket.activities.MainActivity" >
 
-    <FrameLayout
-        android:id="@+id/main_fragment_container"
+    <RelativeLayout
+        android:id="@+id/relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp" />
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@+id/main_fragment_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <fragment
+            android:id="@+id/main_adFragment"
+            android:name="com.mobile.tvpocket.fragments.AdFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/Aqua" />
+    </RelativeLayout>
 
     <fragment
         android:id="@+id/main_navigation_drawer"
@@ -21,18 +34,19 @@
         android:layout_gravity="start"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-    <RelativeLayout
-        android:id="@+id/main_relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" >
+    <!-- <RelativeLayout -->
+    <!-- android:id="@+id/main_relativeLayout" -->
+    <!-- android:layout_width="320dp" -->
+    <!-- android:layout_height="50dp" > -->
 
-        <fragment
-            android:id="@+id/main_adFragment"
-            android:name="com.mobile.tvpocket.fragments.AdFragment"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/Aqua"
-            android:layout_alignParentBottom="true" />
-    </RelativeLayout>
+
+    <!-- <fragment -->
+    <!-- android:id="@+id/main_adFragment" -->
+    <!-- android:name="com.mobile.tvpocket.fragments.AdFragment" -->
+    <!-- android:layout_width="320dp" -->
+    <!-- android:layout_height="50dp" -->
+    <!-- android:layout_alignParentBottom="true" -->
+    <!-- android:background="@color/Aqua" /> -->
+    <!-- </RelativeLayout> -->
 
 </android.support.v4.widget.DrawerLayout>

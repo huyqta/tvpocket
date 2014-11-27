@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/Combo77GreenUnderline"
         android:gravity="center_horizontal"
-        android:text="@string/msg_loading"        
+        android:text="@string/msg_loading"
         android:textColor="@color/White"
         android:textSize="24sp" />
 
@@ -39,5 +39,19 @@
             android:onClick="onStopClick"
             android:src="@drawable/ic_media_stop" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom" >
+
+        <fragment
+            android:id="@+id/audio_stream_adFragment"
+            android:name="com.mobile.tvpocket.fragments.AdFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 
 </RelativeLayout>

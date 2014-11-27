@@ -6,6 +6,9 @@ import java.util.List;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -17,13 +20,14 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.adapter.CustomListviewImage2TextAdapter;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.mobile.tvpocket.models.MyReminder;
 import com.mobile.tvpocket.utils.FileUtility;
 import com.mobile.tvpocket.utils.GlobalConstants;
 import com.mobile.tvpocket.utils.GlobalConstants.CustomLayout;
 import com.splunk.mint.Mint;
 
-public class ReminderActivity extends Activity {
+public class ReminderActivity extends FragmentActivity {
 
 	List<MyReminder> lstReminder;
 
@@ -40,6 +44,13 @@ public class ReminderActivity extends Activity {
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+
+		// Goi fragment Home
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		AdFragment adfragmentProgramAction = new AdFragment();
+		fragmentTransaction.add(R.id.reminder_adFragment, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.commit();
 	}
 
 	@Override

@@ -10,6 +10,9 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageButton;
@@ -17,9 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mobile.tvpocket.R;
+import com.mobile.tvpocket.fragments.AdFragment;
 import com.splunk.mint.Mint;
 
-public class StreamAudioActivity extends Activity implements OnPreparedListener, OnErrorListener, OnCompletionListener {
+public class StreamAudioActivity extends FragmentActivity implements OnPreparedListener, OnErrorListener, OnCompletionListener {
 
 	MediaPlayer mp;
 	TextView tvStatus;
@@ -49,6 +53,14 @@ public class StreamAudioActivity extends Activity implements OnPreparedListener,
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+
+		// Goi fragment Home
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		AdFragment adfragmentProgramAction = new AdFragment();
+		fragmentTransaction.add(R.id.introduction_adFragment, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.commit();
+
 		try {
 			mp = new MediaPlayer();
 			mp.setAudioStreamType(AudioManager.STREAM_MUSIC);

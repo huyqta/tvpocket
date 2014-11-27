@@ -65,7 +65,7 @@ public class ProgramActionsActivity extends FragmentActivity {
 		sUrlWatchOnline = intent.getBundleExtra("BUNDLE").getString("URLONLINE");
 		Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");
 
-		ImageView imvChannel = (ImageView) findViewById(R.id.channel_logo);
+		ImageView imvChannel = (ImageView) findViewById(R.id.program_action_channel_logo);
 
 		Drawable drw = MediaUtil.GetLocalLogo(iChannelid);
 		if (drw != null)

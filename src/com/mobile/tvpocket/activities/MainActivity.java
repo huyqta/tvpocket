@@ -45,6 +45,7 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 
 		setContentView(R.layout.activity_main);
 		Mint.initAndStartSession(MainActivity.this, "46a7ecb3");
+
 		GlobalConstants.MainContext = this;
 
 		// Them navigation sliding menu
@@ -53,7 +54,8 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
 		mTitle = getTitle();
 
 		// Set up the drawer.
-		 mNavigationDrawerFragment.setUp(R.id.main_navigation_drawer, (DrawerLayout)findViewById(R.id.main_drawer_layout));
+		DrawerLayout dl = (DrawerLayout)findViewById(R.id.main_drawer_layout);
+		 mNavigationDrawerFragment.setUp(R.id.main_navigation_drawer, dl);
 		// LayoutInflater inflate = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		// RelativeLayout layoutRight = (RelativeLayout) inflate.inflate(R.layout.fragment_home_slidingmenu, null);
 		// mNavigationDrawerFragment.setUp(R.id.main_navigation_drawer,

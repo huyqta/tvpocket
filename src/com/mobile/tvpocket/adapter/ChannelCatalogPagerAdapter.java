@@ -64,6 +64,10 @@ public class ChannelCatalogPagerAdapter extends FragmentPagerAdapter {
 
 		public int ChannelGroup;
 
+		public ChannelCatalogDetailFragment() {
+			
+		}
+		
 		public ChannelCatalogDetailFragment(int channelgrp) {
 			this.ChannelGroup = channelgrp;
 		}

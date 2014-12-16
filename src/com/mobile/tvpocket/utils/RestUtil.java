@@ -3,6 +3,7 @@ package com.mobile.tvpocket.utils;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
@@ -90,6 +91,8 @@ public class RestUtil {
 			Map<String, String> parameters, Map<String, String> headers) {
 		try {
 			OAuthRequest request = new OAuthRequest(verb, uri);
+//			request.setConnectTimeout(20000, TimeUnit.MILLISECONDS);
+//			request.setReadTimeout(15000, TimeUnit.MILLISECONDS);
 			if (headers != null) {
 				Iterator<Entry<String, String>> it = headers.entrySet()
 						.iterator();

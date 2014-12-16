@@ -15,6 +15,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,8 @@ import com.mobile.tvpocket.R;
 import com.mobile.tvpocket.fragments.AdFragment;
 import com.splunk.mint.Mint;
 
-public class StreamAudioActivity extends FragmentActivity implements OnPreparedListener, OnErrorListener, OnCompletionListener {
+public class StreamAudioActivity extends FragmentActivity implements
+		OnPreparedListener, OnErrorListener, OnCompletionListener {
 
 	MediaPlayer mp;
 	TextView tvStatus;
@@ -38,13 +41,45 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 		Mint.initAndStartSession(StreamAudioActivity.this, "46a7ecb3");
 		Intent intent = getIntent();
 
-		Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");
+		Typeface font = Typeface.createFromAsset(getAssets(),
+				"fonts/Roboto-Black.ttf");
 
 		sUrlWatchOnline = intent.getBundleExtra("BUNDLE").getString("URLTV");
 		sChannel = intent.getBundleExtra("BUNDLE").getString("CHANNEL");
 
 		btPlay = (ImageButton) findViewById(R.id.audio_stream_play);
+		btPlay.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					tvStatus.setText("Đang nghe");
+					if (!mp.isPlaying()) {
+						mp.prepareAsync();
+						mp.setOnCompletionListener(StreamAudioActivity.this);
+					}
+				} catch (Exception e) {
+					// Log.e("StreamAudioDemo", e.getMessage());
+				}
+			}
+		});
+
 		btStop = (ImageButton) findViewById(R.id.audio_stream_stop);
+		btStop.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					mp.stop();
+					tvStatus.setText("Đã ngừng");
+				} catch (Exception e) {
+					// Log.e("StreamAudioDemo", e.getMessage());
+				}
+			}
+		});
+
 		tvStatus = (TextView) findViewById(R.id.audio_stream_status);
 		tvStatus.setText(sChannel);
 		tvStatus.setTypeface(font);
@@ -52,13 +87,16 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 		this.getActionBar().setHomeButtonEnabled(true);
 		this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.getActionBar().setBackgroundDrawable(
-				new ColorDrawable(getResources().getColor(R.color.Combo77GreenUnderline)));
+				new ColorDrawable(getResources().getColor(
+						R.color.Combo77GreenUnderline)));
 
 		// Goi fragment Home
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		FragmentTransaction fragmentTransaction = fragmentManager
+				.beginTransaction();
 		AdFragment adfragmentProgramAction = new AdFragment();
-		fragmentTransaction.add(R.id.introduction_adFragment, adfragmentProgramAction, "AdFragment");
+		fragmentTransaction.add(R.id.audio_stream_adFragment,
+				adfragmentProgramAction, "AdFragment");
 		fragmentTransaction.commit();
 
 		try {
@@ -68,7 +106,7 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 			mp.setOnErrorListener(this);
 			mp.setDataSource(sUrlWatchOnline);
 		} catch (Exception e) {
-			Log.e("StreamAudioDemo", e.getMessage());
+			// Log.e("StreamAudioDemo", e.getMessage());
 		}
 	}
 
@@ -88,7 +126,7 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 				mp.setOnCompletionListener(this);
 			}
 		} catch (Exception e) {
-			Log.e("StreamAudioDemo", e.getMessage());
+			// Log.e("StreamAudioDemo", e.getMessage());
 		}
 	}
 
@@ -97,7 +135,7 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 			mp.stop();
 			tvStatus.setText("Đã ngừng");
 		} catch (Exception e) {
-			Log.e("StreamAudioDemo", e.getMessage());
+			// Log.e("StreamAudioDemo", e.getMessage());
 		}
 	}
 
@@ -108,7 +146,8 @@ public class StreamAudioActivity extends FragmentActivity implements OnPreparedL
 
 	@Override
 	public void onCompletion(MediaPlayer mp) {
-		Toast.makeText(getApplicationContext(), "Hoàn thành", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "Hoàn thành", Toast.LENGTH_LONG)
+				.show();
 	}
 
 	@Override

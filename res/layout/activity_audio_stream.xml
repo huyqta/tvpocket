@@ -23,21 +23,17 @@
 
         <ImageButton
             android:id="@+id/audio_stream_play"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:contentDescription="@string/content_description"
-            android:onClick="onPlayClick"
-            android:src="@drawable/ic_media_play" />
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_media_play"
+            android:contentDescription="@string/content_description" />
 
         <ImageButton
             android:id="@+id/audio_stream_stop"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:contentDescription="@string/content_description"
-            android:onClick="onStopClick"
-            android:src="@drawable/ic_media_stop" />
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_media_stop"
+            android:contentDescription="@string/content_description" />
     </LinearLayout>
 
     <RelativeLayout
